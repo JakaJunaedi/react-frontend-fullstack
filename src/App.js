@@ -12,6 +12,7 @@ import './App.css';
 
 /** Route Url */
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import UpdateEmployeeComponent from './components/UpdateEmployeeComponent';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
               <Route path ="/" exact component={ListEmployeeComponent} />
               <Route path ="/employees" component={ListEmployeeComponent} />
               <Route path ="/add-employee" component={CreateEmployeeComponent} />
-              
+              <Route path ="/update-employe/:id" component={UpdateEmployeeComponent} />
             </Switch>
           </div>
         <FooterComponent />
