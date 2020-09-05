@@ -13,9 +13,17 @@ class EmployeeService {
     createEmployee(employee) {
         return axios.post(EMPLOYEE_API_BASE_URL, employee);
     }
-        // Update //
+        // Update form //
     getEmployeeById(employeeId) {
         return axios.get(EMPLOYEE_API_BASE_URL + '/' + employeeId);
+    }
+        // Update save //
+    updateEmployee(employee, employeeId) {
+        return axios.put(EMPLOYEE_API_BASE_URL + '/' + employeeId, employee);
+    }
+        // Delete employe //
+    deleteEmployee(employeeId) {
+        return axios.delete(EMPLOYEE_API_BASE_URL + '/' + employeeId);
     }
 
 }

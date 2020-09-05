@@ -34,6 +34,10 @@ class UpdateEmployeeComponent extends Component {
         let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId};
         console.log('employee => ' + JSON.stringify(employee));
 
+        // save update redirect list employee //
+        EmployeeService.updateEmployee(employee, this.state.id).then( res => {
+            this.props.history.push('/employees');
+        });
     }
     changeFirstNameHandler=(event) => {
         this.setState({firstName: event.target.value});
@@ -55,7 +59,7 @@ class UpdateEmployeeComponent extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="card col-md-6 offset-md-3 offset-md-3">
-                            <h2 className="text-center">Form Employe</h2>
+                            <h2 className="text-center">Form Update Employe</h2>
                             <div className="card-body">
                                 <form>
                                     <div className="form-group">
@@ -71,7 +75,7 @@ class UpdateEmployeeComponent extends Component {
                                     <div className="form-group">
                                         <label>Email: </label>
                                         <input placeholder="email" name="emailId" className="form-control"
-                                        value={this.state.email} onChange={this.changeEmailHandler} />
+                                        value={this.state.emailId} onChange={this.changeEmailHandler} />
                                     </div>
 
                                     <button className="btn btn-success" onClick={this.updateEmployee}>Save</button>
